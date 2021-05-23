@@ -1,8 +1,47 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let ShowEmpComponent = class ShowEmpComponent {
-    constructor() { }
+    constructor(service) {
+        this.service = service;
+        this.EmployeeList = [];
+        this.ActivateAddEditEmpComp = false;
+    }
     ngOnInit() {
+        this.refreshEmpList();
+    }
+    addClick() {
+        this.emp = {
+            EmployeeId: 0,
+            EmployeeName: "",
+            Department: "",
+            DateOfJoining: "",
+            PhotoFileName: "anonymous.png"
+        };
+        this.ModalTitle = "Add Employee";
+        this.ActivateAddEditEmpComp = true;
+    }
+    editClick(item) {
+        console.log(item);
+        this.emp = item;
+        this.ModalTitle = "Edit Employee";
+        this.ActivateAddEditEmpComp = true;
+    }
+    deleteClick(item) {
+        if (confirm('Are you sure??')) {
+            this.service.deleteEmployee(item.EmployeeId).subscribe(data => {
+                alert(data.toString());
+                this.refreshEmpList();
+            });
+        }
+    }
+    closeClick() {
+        this.ActivateAddEditEmpComp = false;
+        this.refreshEmpList();
+    }
+    refreshEmpList() {
+        this.service.getEmpList().subscribe(data => {
+            this.EmployeeList = data;
+        });
     }
 };
 ShowEmpComponent = __decorate([
