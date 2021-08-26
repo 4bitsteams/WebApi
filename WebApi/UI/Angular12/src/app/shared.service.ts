@@ -28,6 +28,26 @@ export class SharedService {
   }
 
 
+  //Section Add//
+
+  getSecList(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/Section');
+  }
+
+  addSection(val: any) {
+    return this.http.post(this.APIUrl + '/Section', val);
+  }
+
+  updateSection(val: any) {
+    return this.http.put(this.APIUrl + '/Section', val);
+  }
+
+  deleteSection(val: any) {
+    return this.http.delete(this.APIUrl + '/Section/' + val);
+  }
+
+  //Section End
+
   getEmpList(): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/Employee');
   }
