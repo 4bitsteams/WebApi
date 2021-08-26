@@ -16,3 +16,9 @@ CREATE TABLE [dbo].[Employee] (
     PRIMARY KEY CLUSTERED ([EmployeeId] ASC)
 );
 
+CREATE TABLE [dbo].[Section] (
+    [SectionId]   INT        IDENTITY (1, 1) NOT NULL,
+    [SectionName] NCHAR (10) NULL,
+    PRIMARY KEY CLUSTERED ([SectionId] ASC)
+);
+

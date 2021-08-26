@@ -1,5 +1,5 @@
 import { Component, OnInit, Input  } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import { EmployeeService } from 'src/app/employee.service';
 @Component({
   selector: 'app-add-edit-emp',
   templateUrl: './add-edit-emp.component.html',
@@ -7,7 +7,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class AddEditEmpComponent implements OnInit {
 
-  constructor(private service: SharedService) { }
+  constructor(private service: EmployeeService) { }
 
   @Input() emp: any;
   EmployeeId: any;

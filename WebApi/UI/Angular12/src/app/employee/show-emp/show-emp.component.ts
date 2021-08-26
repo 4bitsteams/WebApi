@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import { EmployeeService } from 'src/app/employee.service';
 @Component({
   selector: 'app-show-emp',
   templateUrl: './show-emp.component.html',
@@ -7,7 +7,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class ShowEmpComponent implements OnInit {
 
-  constructor(private service: SharedService) { }
+  constructor(private service: EmployeeService) { }
 
   EmployeeList: any = [];
 

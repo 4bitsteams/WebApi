@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import { SectionService } from 'src/app/section.service';
 @Component({
   selector: 'app-show-sec',
   templateUrl: './show-sec.component.html',
@@ -7,7 +7,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class ShowSecComponent implements OnInit {
 
-  constructor(private service: SharedService) { }
+  constructor(private service: SectionService) { }
 
   SectionList: any = [];
 

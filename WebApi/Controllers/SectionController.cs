@@ -48,11 +48,11 @@ namespace WebApi.Controllers
 
 
         [HttpPost]
-        public JsonResult Post(Department dep)
+        public JsonResult Post(Section sec)
         {
             string query = @"
                     insert into dbo.Section values 
-                    ('" + dep.DepartmentName + @"')
+                    ('" + sec.SectionName + @"')
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
@@ -75,12 +75,12 @@ namespace WebApi.Controllers
 
 
         [HttpPut]
-        public JsonResult Put(Department dep)
+        public JsonResult Put(Section sec)
         {
             string query = @"
                     update dbo.Section set 
-                    SectionName = '" + dep.DepartmentName + @"'
-                    where SectionId = " + dep.DepartmentId + @" 
+                    SectionName = '" + sec.SectionName + @"'
+                    where SectionId = " + sec.SectionId + @" 
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");

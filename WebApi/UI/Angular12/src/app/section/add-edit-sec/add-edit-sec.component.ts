@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import { SectionService } from 'src/app/section.service';
 @Component({
   selector: 'app-add-edit-sec',
   templateUrl: './add-edit-sec.component.html',
@@ -7,7 +7,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class AddEditSecComponent implements OnInit {
 
-  constructor(private service: SharedService) { }
+  constructor(private service: SectionService) { }
   @Input() sec: any;
   SectionId: any;
   SectionName: any;
